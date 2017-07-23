@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.xw.repo.SlidingUpPanelLayout
-    android:id="@+id/sliding_up_panel_layout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.xw.repo.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sliding_up_panel_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.xw.sample.slidinguppanellayout.demo1.DemoActivity1">
@@ -29,6 +28,6 @@
             app:drawableTopCompat="@drawable/svg_ic_add_dash_white"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 </com.xw.repo.SlidingUpPanelLayout>

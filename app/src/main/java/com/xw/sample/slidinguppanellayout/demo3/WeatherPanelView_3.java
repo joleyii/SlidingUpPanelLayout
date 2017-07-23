@@ -1,10 +1,12 @@
 package com.xw.sample.slidinguppanellayout.demo3;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.xw.repo.ISlidingUpPanel;
 import com.xw.repo.SlidingUpPanelLayout;
@@ -16,10 +18,7 @@ import com.xw.sample.slidinguppanellayout.R;
  */
 
 public class WeatherPanelView_3 extends BaseWeatherPanelView_3 implements View.OnClickListener {
-
-
-
-    private int mWeatherTypeCode;
+    LinearLayout panel_content_layout;
 
     public WeatherPanelView_3(Context context) {
         this(context, null);
@@ -31,8 +30,8 @@ public class WeatherPanelView_3 extends BaseWeatherPanelView_3 implements View.O
 
     public WeatherPanelView_3(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
         LayoutInflater.from(context).inflate(R.layout.content_weather_panel_view3, this, true);
+        panel_content_layout = (LinearLayout) findViewById(R.id.panel_content_layout);
     }
 
     @Override
@@ -62,6 +61,10 @@ public class WeatherPanelView_3 extends BaseWeatherPanelView_3 implements View.O
         mWeather = weather;
         if (weather == null)
             return;
+    }
+
+    public void setBackColor(Drawable d) {
+        panel_content_layout.setBackground(d);
     }
 
 }

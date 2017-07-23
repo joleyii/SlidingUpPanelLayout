@@ -55,7 +55,6 @@ public abstract class BaseWeatherPanelView_3 extends CardView implements ISlidin
 
     public void setFloor(int floor) {
         mFloor = floor;
-
         mRealPanelHeight = 0;
     }
 

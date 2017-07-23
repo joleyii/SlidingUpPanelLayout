@@ -15,10 +15,6 @@ import com.xw.repo.SlidingUpPanelLayout;
 import com.xw.sample.slidinguppanellayout.R;
 import com.xw.sample.slidinguppanellayout.Util;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -33,8 +29,6 @@ public class DemoActivity1_3 extends AppCompatActivity {
     SlidingUpPanelLayout mSlidingUpPanelLayout;
     @BindView(R.id.bg_layout)
     View mBgLayout;
-
-    private List<WeatherModel_3> mWeatherList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,38 +100,9 @@ public class DemoActivity1_3 extends AppCompatActivity {
     }
 
     private void loadData() {
-        mWeatherList.clear();
-
-        WeatherModel_3 weather;
-        List<WeatherModel_3> forecast;
-
-        weather = new WeatherModel_3("成都", 0, "24", "20", "28", "优");
-        forecast = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            forecast.add(new WeatherModel_3(new Random().nextInt(3), "32", "36"));
-        }
-        weather.setForecasts(forecast);
-        mWeatherList.add(weather);
-
-        weather = new WeatherModel_3("北京", 1, "26", "22", "32", "良");
-        forecast = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            forecast.add(new WeatherModel_3(new Random().nextInt(3), "27", "33"));
-        }
-        weather.setForecasts(forecast);
-        mWeatherList.add(weather);
-
-        weather = new WeatherModel_3("上海", 2, "20", "18", "25", "良");
-        forecast = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            forecast.add(new WeatherModel_3(new Random().nextInt(3), "23", "28"));
-        }
-        weather.setForecasts(forecast);
-        mWeatherList.add(weather);
 
         mSlidingUpPanelLayout.setAdapter(new SlidingUpPanelLayout.Adapter() {
-
-            private final int mSize = mWeatherList.size();
+            private final int mSize = 3;
 
             @Override
             public int getItemCount() {
@@ -165,9 +130,7 @@ public class DemoActivity1_3 extends AppCompatActivity {
             public void onBindView(final ISlidingUpPanel panel, int position) {
                 if (mSize == 0)
                     return;
-
                 BaseWeatherPanelView_3 BasePanel = (BaseWeatherPanelView_3) panel;
-                BasePanel.setWeatherModel(mWeatherList.get(position));
                 BasePanel.setClickable(true);
                 BasePanel.setOnClickListener(new View.OnClickListener() {
                     @Override
