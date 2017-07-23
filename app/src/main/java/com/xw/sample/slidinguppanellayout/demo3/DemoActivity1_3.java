@@ -53,7 +53,7 @@ public class DemoActivity1_3 extends AppCompatActivity {
             window.setStatusBarColor(Color.TRANSPARENT);
         }
 
-        setContentView(R.layout.activity_demo1);
+        setContentView(R.layout.activity_demo3);
         ButterKnife.bind(this);
 
         mSlidingUpPanelLayout.setPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListenerAdapter() {

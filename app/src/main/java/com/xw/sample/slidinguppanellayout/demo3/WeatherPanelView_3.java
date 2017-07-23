@@ -62,7 +62,7 @@ public class WeatherPanelView_3 extends BaseWeatherPanelView_3 implements View.O
     public WeatherPanelView_3(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        LayoutInflater.from(context).inflate(R.layout.content_weather_panel_view, this, true);
+        LayoutInflater.from(context).inflate(R.layout.content_weather_panel_view3, this, true);
         mContentLayout = findViewById(R.id.panel_content_layout);
         mMenuLayout = findViewById(R.id.panel_menu_layout);
         mExpendLayout = findViewById(R.id.panel_expend_layout);
